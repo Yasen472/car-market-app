@@ -1,0 +1,27 @@
+Backend:
+
+1. Change the carModel logic
+- the model should consist of:
+brand
+model
+image
+year 
+price
+location
+coupe
+fuel type
+kilometres
+horsepower
+engine capacity
+euro status
+doors count
+type(brand new, used)
+contact
+extras
+
+Frontend:
+
+1. Make an actual example of a listing
+2. Make the look of it when it is fully opened  
+3. Make the page display the data that we have stored in our cars collection in the mongoDB
+

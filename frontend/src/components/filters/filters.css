@@ -1,0 +1,18 @@
+.filters-container {
+    display: flex;
+    width: 80%;
+    margin: 0 10%;
+    justify-content: space-between;
+}
+
+.filters-container > div {
+    background-color: grey;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+select {
+    color: white;
+    background-color: black;
+}

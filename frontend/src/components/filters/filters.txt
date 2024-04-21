@@ -1,0 +1,14 @@
+Filters:
+make
+model
+fuel type
+transmissionType
+Price
+Year
+Location
+From
+Color
+DoorsCount
+Power
+Extras
+

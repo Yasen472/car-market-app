@@ -1,0 +1,60 @@
+Марки коли:
+VW
+Mercedes-Benz
+BMW
+
+Audi
+Opel
+Peugeot
+Toyota
+Renault
+Ford
+Citroen
+Honda
+Mazda
+Fiat
+Skoda
+Hyundai
+Seat
+Kia
+Mitsubishi
+Suzuki
+Volvo
+Subaru
+Dacia
+Chevrolet
+Alfa Romeo
+Land Rover
+Jeep
+Mini
+Chrysler
+Daihatsu
+Porsche
+Lancia
+Jaguar
+Smart
+Lexus
+Lada
+Rover
+Saab
+Daewoo
+Dodge
+Infiniti
+Tesla
+Great Wall
+Isuzu
+Range Rover
+UAZ
+Cadilac
+Maserati
+Tata
+Lincoln
+DS
+DR
+Lamborghini
+Ferrari
+Rolls Royce
+Aston Martin
+Maybach
+
+

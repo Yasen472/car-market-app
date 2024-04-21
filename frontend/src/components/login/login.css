@@ -1,0 +1,30 @@
+.login-page {
+    height: 100% - 5rem;
+    color: white;
+}
+
+.login-header {
+    font-size: 2rem;
+}
+
+.login-container {
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    display: flex;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.login-btn {
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    width: 4rem;
+    padding: 2px;
+}

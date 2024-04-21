@@ -1,0 +1,29 @@
+.register-page {
+    height: 100% - 5rem;
+    color: white;
+}
+
+.register-header {
+    font-size: 2rem;
+}
+
+.register-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    display: flex;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.register-btn {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    width: 5rem;
+    padding: 5px;
+}

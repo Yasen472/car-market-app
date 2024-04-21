@@ -1,0 +1,78 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto; /* Center the container horizontally */
+  justify-content: center;
+}
+
+.cards {
+  color: white;
+  background-color: black;
+  border-radius: 12px;
+  border: 1px solid #bacdd8;
+  width: 250px; /* Set a smaller fixed width for the cards */
+  margin: 10px; /* Add margin between cards */
+}
+
+.listing-image {
+  width: 100%;
+  height: 150px; /* Set a smaller fixed height for the images */
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card_details {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px 8px 8px;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 450;
+  margin: 0; /* Remove margins */
+}
+
+.underline {
+  position: relative;
+  margin: 8px 0;
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  display: block;
+}
+
+.view-btn {
+  margin-top: 10px;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 10px;
+  width: 4rem;
+  align-self: center;
+  font-weight: 450;
+  background-color: #e0efff;
+  display: block;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.view-btn:focus,
+.view-btn:hover {
+  background-color: #0077ff;
+  color: #e0efff;
+}
+
+.car-details {
+  font-size: 1rem;
+}
+
+.tag {
+  padding: 4px 8px;
+  border: 1px solid #e5eaed;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #788697;
+}

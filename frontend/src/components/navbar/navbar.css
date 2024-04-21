@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+.nav-links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    background-color: yellow;
+}
+
+.nav-link-header {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.links {
+    display: flex;
+}
+
+.links > a {
+    color: #000;
+    margin-right:2rem;
+}

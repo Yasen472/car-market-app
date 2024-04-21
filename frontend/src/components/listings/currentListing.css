@@ -1,0 +1,22 @@
+* {
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.car-heading {
+    font-size: 1.5rem;
+}
+
+.car-image {
+    width: 50%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
