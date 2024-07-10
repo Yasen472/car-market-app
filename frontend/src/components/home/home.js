@@ -18,7 +18,6 @@ const Home = () => {
           </div>
 
           <img src={audiImage} className='heading-image' />
-          <Link to='/filters'>Go to filters</Link>
         </div>
       </div>
     </>

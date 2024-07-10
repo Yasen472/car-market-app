@@ -1,4 +1,4 @@
-// App.js
+import React from 'react';
 import './App.css';
 import Navbar from './components/navbar/navbar.js';
 import { Routes, Route } from 'react-router-dom';
@@ -10,34 +10,41 @@ import Listings from './components/listings/listings.js';
 import { AuthProvider } from './components/auth/authContext.js';
 import Filters from './components/filters/filters.js';
 import CurrentListing from './components/listings/currentListing.js';
-import Menu from './components/filters/menu.js';
+import { FilterProvider } from './components/context/FilterContext.js';
+import CarListingForm from './components/listings/CarListingForm.js';
+import { PriceProvider } from './components/context/PriceContext.js';
+import { PowerProvider } from './components/context/PowerContext.js';
+import { YearProvider } from './components/context/YearContext.js';
 
 function App() {
-
+  
   return (
-    <>
     <AuthProvider>
-    <div className="app-container">
-    {/* <AuthProvider> */}
-    <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/listings" element={<Listings />} />
-        <Route path="/filters" element={<Filters />} />
-        <Route path="/currentListing/:id" element={<CurrentListing />} />
-      
-        <Route path="/menu" element={<Menu />} />
-      </Routes>
-      {/* </AuthProvider> */}
-      </div>
-      </AuthProvider>
-    </>
+      <YearProvider>
+      <PowerProvider>
+      <PriceProvider>
+      <FilterProvider>
+        <div className="app-container">
+          <Navbar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/listings" element={<Listings />} />
+              <Route path="/filters" element={<Filters />} />
+              <Route path="/currentListing/:id" element={<CurrentListing />} />
+              <Route path="/carListing" element={<CarListingForm />} />
+            </Routes>
+          </div>
+        </div>
+      </FilterProvider>
+      </PriceProvider>
+      </PowerProvider>
+      </YearProvider>
+    </AuthProvider>
   );
 }
 
 export default App;
-
-// padding otlqvo i otdqsno

@@ -1,5 +1,0 @@
-1. Fix the functionality so that it creates a car card for each element of the data array received from the backend - done
-2. Fix the look - done (maybe)
-
-3. Make another component for how the car would look when you open the whole listing itself
-4. Add other cars with images so that we see how the whole page will look

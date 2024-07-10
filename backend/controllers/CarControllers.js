@@ -66,7 +66,6 @@ module.exports.deleteCar = (req, res) => {
 
 }
 
-// Get all models
 module.exports.getModels = async (req, res) => {
     try {
         const models = await Model.find();

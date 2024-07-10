@@ -4,72 +4,83 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/authContext.js';
 
+
 const Login = () => {
-  const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-  const { isLoggedIn, login, logout } = useAuth();
+    const URL = 'http://localhost:5000/auth';
 
-  const URL = 'http://localhost:5000/auth'
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // You can perform any validation or additional logic here before sending the data
-    const userData = {
-      email: email,
-      password: password,
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
     };
-  
-    try {
-      // Make a request to your login endpoint
-      const response = await axios.post(`${URL}/login`, {
-        email: email,
-        password: password,
-      });
 
-      // Handle the response from the server as needed
-      console.log('Login successful:', response.data);
-      login();
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
 
-      // Clear form fields and error message after successful registration
-      setEmail('');
-      setPassword('');
-      navigate('/')
-      // Navigate('/');
-    } catch (error) {
-      // Handle login error
-      console.error('Error during login:', error);
-    }
-  
-  
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  return (
-    <div className="login-page">
-      <div className='login-container'>
-        <h3 className='login-header'>Login</h3>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" value={email} onChange={handleEmailChange} />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-          <button type="submit" className='login-btn'>Login</button>
-        </form>
-      </div>
-      </div>
-  );
+        setErrorMessage('');
+
+        if (!email || !password) {
+            setErrorMessage('Please fill in all fields.');
+            return;
+        }
+
+        try {
+            const response = await axios.post(`${URL}/login`, { email, password });
+
+            if (response.status === 200) {
+                const userId = response.data.userId; // Assuming the server sends back a userId
+                console.log('Login successful:', response.data);
+                login(userId);
+
+                setEmail('');
+                setPassword('');
+
+                navigate('/');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            if (error.response && error.response.data && error.response.data.message) {
+                setErrorMessage(error.response.data.message);
+            } else {
+                setErrorMessage('Login failed. Please check your credentials and try again.');
+            }
+        }
+    };
+
+    return (
+        <div className="login-page">
+            <div className="login-container">
+                <h3 className="login-header">Login</h3>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={handleEmailChange}
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
+                    <button type="submit" className="login-btn">Login</button>
+                </form>
+            </div>
+        </div>
+    );
 };
 
 export default Login;

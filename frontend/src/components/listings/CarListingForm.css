@@ -1,0 +1,61 @@
+.car-listing-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.car-select {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  color: black;
+}
+
+
+.car-listing-form h1 {
+  text-align: center;
+}
+
+.car-listing-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-listing-form form div {
+  margin-bottom: 15px;
+}
+
+.car-listing-form form label {
+  margin-bottom: 5px;
+}
+
+.car-listing-form form input,
+.car-listing-form form select,
+.car-listing-form form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.car-listing-form form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.car-listing-form form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.car-listing-form form button:hover {
+  background-color: #0056b3;
+}

@@ -1,78 +1,164 @@
-#container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: auto; /* Center the container horizontally */
-  justify-content: center;
-}
-
 .cards {
-  color: white;
-  background-color: black;
-  border-radius: 12px;
-  border: 1px solid #bacdd8;
-  width: 250px; /* Set a smaller fixed width for the cards */
-  margin: 10px; /* Add margin between cards */
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid white;
+    height: 500px;
+    margin: 5px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.listing-image {
-  width: 100%;
-  height: 150px; /* Set a smaller fixed height for the images */
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+.carousel .slide img {
+    width: 100%;
+    height: 170px; 
+    object-fit: cover;
+}
+
+.carousel .slider-wrapper {
+    margin-bottom: 0;
+}
+
+.cards .carousel-root {
+    margin-bottom: 0; 
 }
 
 .card_details {
-  display: flex;
-  flex-direction: column;
-  padding: 16px 8px 8px 8px;
+    margin-top: 10px; 
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.listing-image {
+    width: 100%;
+    min-height: 150px;
+    height: 200px;
+    max-height: 250px; 
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    object-fit: cover;
+}
+
+.card_details {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 8px;
 }
 
 .name {
-  font-size: 1.1rem;
-  font-weight: 450;
-  margin: 0; /* Remove margins */
+    font-size: 1.5rem;
+    font-weight: 650;
+    padding: 0 0 0 4px;
+    color: black;
 }
 
 .underline {
-  position: relative;
-  margin: 8px 0;
-  background-color: white;
-  height: 2px;
-  width: 100%;
-  display: block;
+    position: relative;
+    margin: 8px 0;
+    background-color: black;
+    height: 2px;
+    width: 100%;
+    display: block;
 }
 
 .view-btn {
-  margin-top: 10px;
-  border: none;
-  padding: 6px 6px;
-  border-radius: 10px;
-  width: 4rem;
-  align-self: center;
-  font-weight: 450;
-  background-color: #e0efff;
-  display: block;
-  transition: all 200ms ease-in-out;
-  cursor: pointer;
+    margin-top: 12px;
+    width: 100%;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    align-self: center;
+    font-weight: 450;
+    background-color: #e0efff;
+    display: block;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
 }
 
 .view-btn:focus,
 .view-btn:hover {
-  background-color: #0077ff;
-  color: #e0efff;
+    background-color: #0077ff;
+    color: #e0efff;
 }
 
 .car-details {
-  font-size: 1rem;
+    font-size: 1rem;
+    color: black;
 }
 
 .tag {
-  padding: 4px 8px;
-  border: 1px solid #e5eaed;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #788697;
+    padding: 4px 8px;
+    border: 1px solid #e5eaed;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #788697;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.filter-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure the icon is above other content */
+}
+
+.filter-icon svg {
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.overlay-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 6;
+}
+
+.close-filters-btn {
+    position: absolute;
+    bottom: 3px;
+    right: 2px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
 }

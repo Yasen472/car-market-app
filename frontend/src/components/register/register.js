@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './register.css'
+import './register.css';
 import { useAuth } from '../auth/authContext.js';
- 
 
 const Register = () => {
   const navigate = useNavigate();
-
-  const { isLoggedIn, login, logout } = useAuth();
+  const { login } = useAuth();
 
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
   const [rePassword, setRePassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const URL = 'http://localhost:5000/auth'
+  const URL = 'http://localhost:5000/auth/register';
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -33,7 +30,6 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic client-side validation
     if (!email || !password || !rePassword) {
       setErrorMessage('Please fill in all fields.');
       return;
@@ -49,21 +45,14 @@ const Register = () => {
       password: password,
     };
 
-    const response = await axios.post(`${URL}/register`, {
-      email: email,
-      password: password,
-    });
-
     try {
+      const response = await axios.post(URL, userData);
 
-      debugger;
-      // Make a request to your registration endpoint on the server
       if (response.status === 200) {
-        // Handle the response from the server as needed
+        const userId = response.data.userId; // Assuming the server sends back a userId
         console.log('Registration successful:', response.data);
-        login();
+        login(userId);
 
-        // Clear form fields and error message after successful registration
         setEmail('');
         setPassword('');
         setRePassword('');
@@ -94,7 +83,7 @@ const Register = () => {
           <button type='submit' className='register-btn'>Register</button>
         </form>
       </div>
-      </div>
+    </div>
   );
 };
 

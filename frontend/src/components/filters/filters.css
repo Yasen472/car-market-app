@@ -1,18 +1,113 @@
 .filters-container {
     display: flex;
-    width: 80%;
-    margin: 0 10%;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
 }
 
 .filters-container > div {
-    background-color: grey;
-    border: 1px solid white;
-    border-radius: 12px;
-    padding: 5px;
+    background-color: lightgray;
+    color: darkslategray;
+    border-radius: 10px;
+    cursor: pointer;
 }
+
+
 
 select {
     color: white;
     background-color: black;
+}
+
+.filters-menu-container {
+    background-color: white;
+    max-width: 50%;
+    /* Limit the maximum width of the menu */
+    margin: 20px auto;
+    /* Center the menu horizontally */
+    padding: 10px;
+    /* Add padding for spacing */
+    border-radius: 12px;
+    /* Add border radius for styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add shadow for better visibility */
+}
+
+.header {
+    color: black;
+    text-align: center;
+    /* Center the header text */
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow options to wrap to the next line */
+    justify-content: center;
+    /* Center the options */
+}
+
+.options-container > div {
+    width: max-content;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /* Add margin at the bottom for spacing */
+    background-color: grey;
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 5px;
+    cursor: pointer;
+    /* Change cursor to pointer */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+ 
+    .filters-container > div {
+        padding: 2px 4px;
+        font-size: 0.5rem;
+    }
+
+}
+
+;
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    
+    .filters-container > div {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+   
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .filters-container > div {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .filters-container > div {
+        padding: 4px 8px;
+        font-size: 1rem;
+    }
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .filters-container > div {
+        padding: 8px 16px;
+        cursor: pointer;
+    }
+
 }

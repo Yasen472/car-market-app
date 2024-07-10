@@ -1,22 +1,109 @@
-* {
-    color: white;
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow-y: auto;
 }
 
-main {
+.header {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+.content-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2%; /* Adjusted for better layout */
 }
 
-.car-heading {
-    font-size: 1.5rem;
+.car-info {
+    padding: 0 0 20px 0;
+}
+
+.contact-info {
+    width: 80%;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 5px 0 10px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contact-info > svg {
+    width: 16px;
+    height: 16px;
+}
+
+.car-info > div,
+.contact-info > div {
+    font-size: 0.9rem;
+}
+
+.car-info > p {
+    margin: 2px;
+    font-size: 1.125rem;
+}
+
+.left-content {
+    text-align: left;
+    flex: 1; /* Changed to flex for responsive design */
+    max-width: 35%; /* Adjusted for better layout */
 }
 
 .car-image {
-    width: 50%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    border-radius: 8px;
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+}
 
+.edit-save-buttons {
+    display: flex;
+    flex-direction: column;
+}
 
+.edit-save-buttons > button {
+    width: 100px;
+}
+
+.right-content {
+    flex: 1; /* Changed to flex for responsive design */
+    max-width: 60%; /* Adjusted for better layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.p-description {
+    border: 2px solid #ccc; /* Example border style */
+    padding: 8px; /* Optional: Add padding for better readability */
+    width: 95%; /* Adjust width as needed */
+    max-width: 100%; /* Ensure it doesn't exceed its container */
+    min-height: 100px; /* Adjust minimum height to control the number of visible rows */
+    overflow-y: auto; /* Show scrollbar if content exceeds the defined height */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    white-space: pre-wrap; /* Preserve whitespace and wrap lines as needed */
+    word-wrap: break-word; /* Wrap long words if necessary */
+}
