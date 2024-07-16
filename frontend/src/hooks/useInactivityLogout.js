@@ -1,4 +1,3 @@
-// src/hooks/useInactivityLogout.js
 import { useEffect, useRef } from 'react';
 
 const useInactivityLogout = (logoutCallback, inactivityTime = 600000) => { // default 10 minutes

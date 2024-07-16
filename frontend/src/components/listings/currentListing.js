@@ -13,7 +13,7 @@ const CurrentListing = () => {
     const [car, setCar] = useState({});
     const [isEditing, setIsEditing] = useState(false);
     const [editedCar, setEditedCar] = useState({});
-    const { isLoggedIn, userId } = useAuth(); // Assuming you have access to userId in useAuth
+    const { isLoggedIn, userId } = useAuth(); 
 
     const navigate = useNavigate();
 

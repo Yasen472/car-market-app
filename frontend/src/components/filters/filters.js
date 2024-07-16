@@ -9,13 +9,11 @@ import SliderPower from "../sliders/sliderPower.js";
 import SliderYear from "../sliders/sliderYear.js";
 import { PowerContext } from "../context/PowerContext.js";
 import { YearContext } from "../context/YearContext.js";
-
-import { FaFilter } from "react-icons/fa";
-
+import { CiSearch } from "react-icons/ci";
 
 const Filters = () => {
     const [selected, setSelected] = useState(""); //which div we have selected
-    const [make, setMake] = useState([]); //save the makes when loading
+    const [make, setMake] = useState([]); 
     const [model, setModel] = useState([]);
     const [options, setOptions] = useState([]);
     const [data, setData] = useState([]);
@@ -26,6 +24,8 @@ const Filters = () => {
     const { priceValues, setPriceValues } = useContext(PriceContext);
     const { powerValues, setPowerValues } = useContext(PowerContext);
     const { yearValues, setYearValues } = useContext(YearContext);
+
+    const [searchModel, setSearchModel] = useState('');
 
     const colors = ["White", "Black", "Silver", "Gray", "Blue", "Red", "Dark Blue", "Dark Grey", "Dark Red","Green",];
     const transmission = ["manual", "automatic"];
@@ -151,11 +151,15 @@ const Filters = () => {
                     </div>
                 ));
             case "Model":
-                return model.map((option, index) => (
-                    <div key={index} onClick={() => handleOptionClick(option)}>
-                        {option}
-                    </div>
-                ));
+                return model
+                    .filter((option) =>
+                        option.toLowerCase().includes(searchModel.toLowerCase())
+                    )
+                    .map((option, index) => (
+                        <div key={index} onClick={() => handleOptionClick(option)}>
+                            {option}
+                        </div>
+                    ));
             case "Fuel":
                 return fuel.map((option, index) => (
                     <div key={index} onClick={() => handleOptionClick(option)}>
@@ -223,7 +227,7 @@ const Filters = () => {
                             ref={(el) => (filterRefs.current[filter] = el)}
                         >
                             {filter}: {selectedFilters[filter]}{" "}
-                            <button onClick={() => handleRemoveFilter(filter)}>
+                            <button className="filter-remove-btn" onClick={() => handleRemoveFilter(filter)}>
                                 X
                             </button>
                         </div>
@@ -243,11 +247,26 @@ const Filters = () => {
                 <div className="filters-menu-container" ref={menuRef}>
                     {selected !== "Price" &&
                         selected !== "Power" &&
-                        selected !== "Year" && (
+                        selected !== "Year" && 
+                        (
                             <div className="header">
                                 <h4>Choose your {selected}</h4>
                             </div>
                         )}
+                    {selected === "Model" && (
+                        <div className="search-model-container">
+                            <input
+                                className="search-input"
+                                type="text"
+                                placeholder="Search Model"
+                                value={searchModel}
+                                onChange={(e) => setSearchModel(e.target.value)}
+                            />
+                             <div className="icon">
+                            <CiSearch />
+                            </div>
+                        </div>
+                    )}
                     <div className="options-container">{renderOptions()}</div>
                 </div>
             )}
@@ -259,7 +278,7 @@ const Filters = () => {
                 )}
             {selected === "Year" && (
                 <SliderYear values={yearValues} setValues={setYearValues}/>
-                )}
+            )}
         </>
     );
 };

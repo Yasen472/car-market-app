@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './customCarousel.css'; // Add custom styles for the carousel
+import './customCarousel.css'; 
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 

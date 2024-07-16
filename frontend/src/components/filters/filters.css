@@ -2,18 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    gap: 10px;
+    padding: 1.5rem;
+    /* gap: 10px; */
 }
 
 .filters-container > div {
     background-color: lightgray;
     color: darkslategray;
-    border-radius: 10px;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    padding: 8px 16px;
     cursor: pointer;
 }
-
-
 
 select {
     color: white;
@@ -22,11 +22,8 @@ select {
 
 .filters-menu-container {
     background-color: white;
-    max-width: 50%;
-    /* Limit the maximum width of the menu */
-    margin: 20px auto;
     /* Center the menu horizontally */
-    padding: 10px;
+    /* padding: 10px; */
     /* Add padding for spacing */
     border-radius: 12px;
     /* Add border radius for styling */
@@ -37,62 +34,234 @@ select {
 .header {
     color: black;
     text-align: center;
+    margin: 0;
     /* Center the header text */
 }
+
+.search-model-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.search-input {
+    box-sizing: border-box;
+    padding-right: 2rem; /* Add padding to the right for the icon */
+    padding-left: 2px;
+    width: 100%; /* Make the input take full width of its container */
+    border: 1px solid black;
+}
+
+.icon {
+    position: absolute;
+    right: 0.5rem; /* Position from the right instead of left */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; 
+}
+
 
 .options-container {
     display: flex;
     flex-wrap: wrap;
-    /* Allow options to wrap to the next line */
-    justify-content: center;
-    /* Center the options */
+    padding: 5px;
+    box-sizing: border-box;
+
 }
 
 .options-container > div {
     width: max-content;
-    margin-right: 10px;
-    margin-bottom: 10px;
     /* Add margin at the bottom for spacing */
     background-color: grey;
     border: 1px solid white;
     border-radius: 12px;
     padding: 5px;
     cursor: pointer;
-    /* Change cursor to pointer */
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
- 
+    
+    .overlay-content {
+        height: calc(100vh - 60px);
+        width: 100%;
+    }
+
+    .filters-menu-container > div {
+        overflow-y: scroll;
+        font-size: 0.9rem;
+    }
+
+    .filters-container {
+        padding: 1.5rem 0rem;
+        flex-wrap: wrap;
+        gap: 8px;
+        
+    }
+
     .filters-container > div {
-        padding: 2px 4px;
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .filter-remove-btn {
         font-size: 0.5rem;
+        padding: 1px 2px;
+    }
+
+    .options-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 400px;
+    }
+
+    .filters-menu-container > .header>h4 {
+        font-size: 1.3rem;
+    }
+
+    .options-container > div {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .search-input {
+        font-size: 1rem;
+    }
+
+    .close-filters-btn {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+        margin-top: 0.5rem
     }
 
 }
 
-;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
-    
-    .filters-container > div {
-        padding: 4px 8px;
-        font-size: 0.8rem;
+
+    .overlay-content {
+        height: calc(100vh - 60px);
+        width: 100%;
     }
+
+    .filters-menu-container > div {
+        overflow-y: scroll;
+        font-size: 0.9rem;
+    }
+
+    .filters-container {
+        padding: 1.5rem 0rem;
+        flex-wrap: wrap;
+        gap: 8px;
+        
+    }
+
+    .filters-container > div {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .filter-remove-btn {
+        padding: 1px 2px;
+    }
+
+    .options-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 400px;
+    }
+
+    .filters-menu-container > .header>h4 {
+        font-size: 1.3rem;
+    }
+
+    .options-container > div {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .search-input {
+        font-size: 1rem;
+    }
+
+    .close-filters-btn {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+        margin-top: 0.5rem
+    }
+
    
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    
-    .filters-container > div {
-        padding: 4px 8px;
-        font-size: 0.8rem;
+
+    .overlay-content {
+        /* height: calc(100vh - 60px); */
+        width: 100%;
     }
+
+    .filters-menu-container > div {
+        overflow-y: scroll;
+        font-size: 0.9rem;
+    }
+
+    .filters-container {
+        padding: 1.5rem 0rem;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .filters-container > div {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+
+    .filter-remove-btn {
+        font-size: 0.5rem;
+        padding: 1px 2px;
+    }
+
+    .options-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 400px;
+    }
+
+    .filters-menu-container > .header>h4 {
+        font-size: 1.3rem;
+    }
+
+    .options-container > div {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .search-input {
+        font-size: 1rem;
+    }
+
+    .close-filters-btn {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+        margin-top: 0.5rem
+    }
+
+    
+   
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+/* @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
     .filters-container > div {
         padding: 4px 8px;
@@ -100,14 +269,14 @@ select {
     }
 
 
-}
+} */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
 
     .filters-container > div {
         padding: 8px 16px;
         cursor: pointer;
     }
 
-}
+} */

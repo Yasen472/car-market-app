@@ -38,9 +38,6 @@ function Listings() {
         filterCars(cars);
     }, [selectedFilters, priceValues, yearValues, powerValues]);
 
-    useEffect(() => {
-        console.log(showFilters);
-    }, [showFilters])
 
     const handleViewButtonClick = (carId) => {
         navigate(`/currentListing/${carId}`);
@@ -68,8 +65,6 @@ function Listings() {
         setShowFilters(!showFilters);
     };
 
-    // test
-
     return (
         <div className="wrapper">
                 <div className="filter-icon">
@@ -79,7 +74,7 @@ function Listings() {
                 <div className="overlay">
                     <div className="overlay-content">
                         <Filters />
-                        <button className="close-filters-btn" onClick={toggleFilters}>X</button>
+                        <button className="close-filters-btn" onClick={toggleFilters}>Close</button>
                     </div>
                 </div>
             )}

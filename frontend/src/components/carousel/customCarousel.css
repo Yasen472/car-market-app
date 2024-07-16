@@ -1,7 +1,7 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Adjust as needed */
+    max-width: 600px; 
     margin: auto;
     overflow: hidden;
     display: flex;
@@ -16,7 +16,7 @@
 
 .carousel-image {
     width: 100%;
-    height: 300px; /* Set a fixed height */
+    height: 300px; 
     object-fit: cover;
 }
 
@@ -27,14 +27,14 @@
     border: none;
     background-color: transparent;
     color: black;
-    font-size: 2rem; /* Increase size for better visibility */
+    font-size: 2rem; 
     cursor: pointer;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px; /* Increase the width for easier clickability */
-    height: 40px; /* Increase the height for easier clickability */
+    width: 40px; 
+    height: 40px; 
 }
 
 .carousel-arrow.left {
@@ -55,8 +55,8 @@
 }
 
 .thumbnail {
-    width: 80px; /* Increased width */
-    height: 80px; /* Increased height */
+    width: 80px; 
+    height: 80px;
     object-fit: cover;
     border: 2px solid transparent;
     cursor: pointer;
@@ -65,11 +65,11 @@
 }
 
 .thumbnail.active {
-    border-color: #000; /* Active border color */
+    border-color: #000;
 }
 
 .thumbnail:hover {
-    border-color: #555; /* Hover border color */
+    border-color: #555;
 }
 
 

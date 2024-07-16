@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './customCarousel.css'; // Add custom styles for the carousel
+import './customCarousel.css'; 
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
-import { MdDelete } from "react-icons/md"; // Icon for deleting images
+import { MdDelete } from "react-icons/md"; 
 
 const CarouselUpload = ({ images, onImageUpload, onDeleteImage }) => {
     const [currentIndex, setCurrentIndex] = useState(0);

@@ -29,7 +29,7 @@
     padding: 10px;
     max-width: 1200px;
     width: 100%;
-    gap: 2%; /* Adjusted for better layout */
+    gap: 2%; 
 }
 
 .car-info {
@@ -64,8 +64,8 @@
 
 .left-content {
     text-align: left;
-    flex: 1; /* Changed to flex for responsive design */
-    max-width: 35%; /* Adjusted for better layout */
+    flex: 1; 
+    max-width: 35%;
 }
 
 .car-image {
@@ -88,8 +88,8 @@ hr {
 }
 
 .right-content {
-    flex: 1; /* Changed to flex for responsive design */
-    max-width: 60%; /* Adjusted for better layout */
+    flex: 1; 
+    max-width: 60%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,13 +97,13 @@ hr {
 }
 
 .p-description {
-    border: 2px solid #ccc; /* Example border style */
-    padding: 8px; /* Optional: Add padding for better readability */
-    width: 95%; /* Adjust width as needed */
-    max-width: 100%; /* Ensure it doesn't exceed its container */
-    min-height: 100px; /* Adjust minimum height to control the number of visible rows */
-    overflow-y: auto; /* Show scrollbar if content exceeds the defined height */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    white-space: pre-wrap; /* Preserve whitespace and wrap lines as needed */
-    word-wrap: break-word; /* Wrap long words if necessary */
+    border: 2px solid #ccc; 
+    padding: 8px; 
+    width: 95%; 
+    max-width: 100%; 
+    min-height: 100px;
+    overflow-y: auto; 
+    box-sizing: border-box;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
 }
