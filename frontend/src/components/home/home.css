@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
     padding: 0;
@@ -52,7 +52,7 @@
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     
     .home {
         display: flex;
@@ -74,10 +74,10 @@
     .heading-btn {
         margin-top: 0.5rem;
     }
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (max-width: 767px) {
+/* @media only screen and (min-width: 600px) and (max-width: 767px) {
 
     .heading-image {
         width: 100vw;
@@ -91,10 +91,10 @@
     .heading-btn {
         margin-top: 0.5rem;
     }
-}
+} */
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
 
     .home {
         display: flex;
@@ -116,10 +116,10 @@
     .heading-btn {
         margin-top: 0.5rem;
     }
-}
+} */
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
 
 
     .heading-image {
@@ -141,10 +141,10 @@
     .heading-btn {
         margin-top: 0.5rem;
     }
-}
+} */
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
 
     .heading {
         font-size: 2.5rem;
@@ -154,4 +154,38 @@
         font-weight: 250;
     }
 
+} */ 
+
+
+.home {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-heading {
+    font-size: 3rem;
+}
+
+.heading-btn {
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 4px 10px;
+    font-family: "Arimo", sans-serif;
+    font-weight: bold;
+    max-width: 7rem;
+}
+
+.heading-btn > a {
+    color: white;
 }

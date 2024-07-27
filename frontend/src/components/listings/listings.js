@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./listings.css";
 import Filters from "../filters/filters.js";
-import axios from "axios";
+import axios, { all } from "axios";
 import { baseURL } from "../utils/constant.js";
 import { useNavigate } from "react-router-dom";
 import { FilterContext } from "../context/FilterContext.js";
@@ -19,12 +19,22 @@ function Listings() {
     const { yearValues } = useContext(YearContext);
     const { powerValues } = useContext(PowerContext);
     const [showFilters, setShowFilters] = useState(false);
+    const [index, setIndex] = useState(0);
+    const [listings, setListings] = useState([]);
+    const [allListings, setAllListings] = useState([]);
+    const [previousListings, setPreviousListings] = useState([]); //will be used to store the listings that should be shown when previous is clicked
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${baseURL}/get`);
+                // setAllListings(listings => listings.push(response.data));
                 const carData = response.data;
+                // let displayListings = [];
+                // if (carData.length > 13) {
+                //     displayListings.push(carData.slice(0, 14));
+                // }
+                // console.log(displayListings)
                 setCars(carData);
             } catch (error) {
                 console.error("Error fetching car data:", error);
@@ -38,9 +48,16 @@ function Listings() {
         filterCars(cars);
     }, [selectedFilters, priceValues, yearValues, powerValues]);
 
-
     const handleViewButtonClick = (carId) => {
         navigate(`/currentListing/${carId}`);
+    };
+
+    const showNext = () => {
+        setIndex(prevIndex => prevIndex + 13);
+    };
+
+    const showPrevious = () => {
+        setIndex(prevIndex => prevIndex - 13);
     };
 
     const filterCars = (cars) => {
@@ -67,9 +84,11 @@ function Listings() {
 
     return (
         <div className="wrapper">
+            {!showFilters && (
                 <div className="filter-icon">
                     <FaFilter onClick={toggleFilters}/>
                 </div>
+            )}
             {showFilters && (
                 <div className="overlay">
                     <div className="overlay-content">
@@ -103,6 +122,8 @@ function Listings() {
                     );
                 })}
             </div>
+            <p onClick={showNext}>Next</p>
+            <p onClick={showPrevious}>Previous</p>
         </div>
     );
 }

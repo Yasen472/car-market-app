@@ -9,6 +9,7 @@ const Home = () => {
       <div className="home-container">
         <div className="home">
           <div className="heading-container">
+            <h2 className='home-heading'>BGCARS</h2>
             <h4 className='heading'>EXPLORE THE BEST DEALS ON USED CARS WITH US</h4>
             <button className='heading-btn'>
               <Link style={{ textDecoration: 'none' }} to='/listings' className='btn-link'>

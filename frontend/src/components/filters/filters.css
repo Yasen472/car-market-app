@@ -87,11 +87,6 @@ select {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    
-    .overlay-content {
-        height: calc(100vh - 60px);
-        width: 100%;
-    }
 
     .filters-menu-container > div {
         overflow-y: scroll;
@@ -107,19 +102,18 @@ select {
 
     .filters-container > div {
         padding: 5px 10px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .filter-remove-btn {
-        font-size: 0.5rem;
-        padding: 1px 2px;
+        font-size: 0.8rem;
     }
 
     .options-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        max-height: 400px;
+        max-height: 300px;
     }
 
     .filters-menu-container > .header>h4 {
@@ -147,10 +141,6 @@ select {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
 
-    .overlay-content {
-        height: calc(100vh - 60px);
-        width: 100%;
-    }
 
     .filters-menu-container > div {
         overflow-y: scroll;
@@ -175,8 +165,6 @@ select {
 
     .options-container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         max-height: 400px;
     }
 
@@ -199,19 +187,12 @@ select {
         margin-top: 0.5rem
     }
 
-   
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .overlay-content {
-        /* height: calc(100vh - 60px); */
-        width: 100%;
-    }
-
+    
     .filters-menu-container > div {
-        overflow-y: scroll;
         font-size: 0.9rem;
     }
 
@@ -231,15 +212,12 @@ select {
         padding: 1px 2px;
     }
 
-    .options-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-height: 400px;
+    .filters-menu-container > .header > h4 {
+        font-size: 1.3rem;
     }
 
-    .filters-menu-container > .header>h4 {
-        font-size: 1.3rem;
+    .options-container {
+        padding: 1rem;
     }
 
     .options-container > div {
@@ -257,19 +235,29 @@ select {
         margin-top: 0.5rem
     }
 
-    
-   
 }
 
-/* @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+   
+
+    .filters-container {
+        flex-wrap: wrap;
+        padding: 1.5rem 0rem;
+        gap: 8px;
+    }
 
     .filters-container > div {
         padding: 4px 8px;
         font-size: 1rem;
     }
 
+    .options-container > div {
+        padding: 0.3rem 1rem;
+    }
 
-} */
+
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {

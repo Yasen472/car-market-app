@@ -2,30 +2,18 @@
     background-color: white;
     border-radius: 12px;
     border: 1px solid white;
-    height: 500px;
     margin: 5px;
     color: black;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-}
-
-.carousel .slide img {
     width: 100%;
-    height: 170px; 
-    object-fit: cover;
-}
-
-.carousel .slider-wrapper {
-    margin-bottom: 0;
-}
-
-.cards .carousel-root {
-    margin-bottom: 0; 
-}
-
-.card_details {
-    margin-top: 10px; 
+    /* Ensure full width within the container */
+    max-width: 300px;
+    /* Set a maximum width for the cards */
+    height: 100%;
+    /* Ensure the card grows with its content */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
 }
 
 #container {
@@ -35,39 +23,25 @@
     padding: 10px 10px;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    /* Add spacing between cards */
 }
 
-.listing-image {
+.carousel .slide img {
     width: 100%;
-    min-height: 150px;
-    height: 200px;
-    max-height: 250px; 
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    height: 170px;
     object-fit: cover;
 }
 
 .card_details {
-    display: flex;
-    flex-direction: column;
-    padding: 8px 8px 8px 8px;
+    padding: 10px;
 }
 
 .name {
-    font-size: 1.5rem;
     font-weight: 650;
-    padding: 0 0 0 4px;
     color: black;
-}
-
-.underline {
-    position: relative;
-    margin: 8px 0;
-    background-color: black;
-    height: 2px;
-    width: 100%;
-    display: block;
+    margin-bottom: 10px;
+    /* Add margin for spacing */
 }
 
 .view-btn {
@@ -95,15 +69,6 @@
     color: black;
 }
 
-.tag {
-    padding: 4px 8px;
-    border: 1px solid #e5eaed;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #788697;
-}
-
 .wrapper {
     position: relative;
 }
@@ -121,7 +86,7 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Ensure the icon is above other content */
+    z-index: 10;
 }
 
 .filter-icon svg {
@@ -134,8 +99,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 5;
 }
@@ -148,7 +113,6 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    /* min-height: 180px; */
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 25px;
@@ -165,12 +129,46 @@
     cursor: pointer;
 }
 
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
-    .filter-icon {
-        bottom: 3.5rem;
+    .overlay-content {
+        height: 100% ;
+        width: 100%;
     }
 
+    .overlay {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cards {
+        max-width: 200px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .cards {
+        width: 30%;
+    }
+
+    .overlay {
+        display: flex;
+        justify-content: center;
+    }
+
+    .overlay-content {
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .name {
+        font-size: 1.5rem;
+    }
 
 }
