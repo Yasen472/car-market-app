@@ -19,22 +19,14 @@ function Listings() {
     const { yearValues } = useContext(YearContext);
     const { powerValues } = useContext(PowerContext);
     const [showFilters, setShowFilters] = useState(false);
-    const [index, setIndex] = useState(0);
-    const [listings, setListings] = useState([]);
-    const [allListings, setAllListings] = useState([]);
-    const [previousListings, setPreviousListings] = useState([]); //will be used to store the listings that should be shown when previous is clicked
+    const [page, setPage] = useState(2);
+
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${baseURL}/get`);
-                // setAllListings(listings => listings.push(response.data));
                 const carData = response.data;
-                // let displayListings = [];
-                // if (carData.length > 13) {
-                //     displayListings.push(carData.slice(0, 14));
-                // }
-                // console.log(displayListings)
                 setCars(carData);
             } catch (error) {
                 console.error("Error fetching car data:", error);
@@ -53,11 +45,38 @@ function Listings() {
     };
 
     const showNext = () => {
-        setIndex(prevIndex => prevIndex + 13);
+        
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${baseURL}/get/?page=${page+1}`);
+                const carData = response.data;
+                console.log('GREIT SAKSES')
+                setCars(carData);
+            } catch (error) {
+                console.error("Error fetching car data:", error);
+            }
+        };
+
+        fetchData();
+
+        setPage((prev) => prev + 1);
     };
 
     const showPrevious = () => {
-        setIndex(prevIndex => prevIndex - 13);
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`${baseURL}/get/?page=${page-1}`);
+                const carData = response.data;
+                setCars(carData);
+                console.log(carData)
+            } catch (error) {
+                console.error("Error fetching car data:", error);
+            }
+        };
+        setPage((prev) => prev - 1)
+        console.log('NAZAD NAZAD, KAMON, KAMON')
+
+        fetchData();
     };
 
     const filterCars = (cars) => {

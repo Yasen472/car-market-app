@@ -1,8 +1,14 @@
 const CarModel = require('../models/carModel.js');
-const Model = require('../models/Model.js');
+// const Model = require('../models/Model.js');
 
 module.exports.getCars = async (req, res) => {
-    const cars = await CarModel.find()
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const startIndex = (page - 1) * limit;
+
+    const cars = await CarModel.find().skip(startIndex).limit(limit);
+    
     res.send(cars)
 }
 
