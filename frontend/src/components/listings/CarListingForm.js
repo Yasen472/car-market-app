@@ -60,9 +60,106 @@ const CarListingForm = () => {
     contact: '' // Error state for contact field
   });
 
-  const handleImageUpload = (event) => {
+  // const resizeImage = (file, maxWidth, maxHeight) => {
+  //   return new Promise((resolve, reject) => {
+  //     const img = new Image();
+  //     const reader = new FileReader();
+
+  //     reader.onload = (e) => {
+  //       img.src = e.target.result;
+  //     };
+
+  //     img.onload = () => {
+  //       const canvas = document.createElement('canvas');
+  //       let width = img.width;
+  //       let height = img.height;
+
+  //       if (width > height) {
+  //         if (width > maxWidth) {
+  //           height *= maxWidth / width;
+  //           width = maxWidth;
+  //         }
+  //       } else {
+  //         if (height > maxHeight) {
+  //           width *= maxHeight / height;
+  //           height = maxHeight;
+  //         }
+  //       }
+
+  //       canvas.width = width;
+  //       canvas.height = height;
+  //       const ctx = canvas.getContext('2d');
+  //       ctx.drawImage(img, 0, 0, width, height);
+
+  //       canvas.toBlob((blob) => {
+  //         const resizedFile = new File([blob], file.name, {
+  //           type: file.type,
+  //         });
+  //         resolve(resizedFile);
+  //       }, file.type, 1);
+  //     };
+
+  //     reader.onerror = error => reject(error);
+  //     reader.readAsDataURL(file);
+  //   });
+  // };
+
+
+  const resizeImage = (file, maxWidth, maxHeight) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const reader = new FileReader();
+  
+      reader.onload = (e) => {
+        img.src = e.target.result;
+      };
+  
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+  
+        if (width > height) {
+          if (width > maxWidth) {
+            height *= maxWidth / width;
+            width = maxWidth;
+          }
+        } else {
+          if (height > maxHeight) {
+            width *= maxHeight / height;
+            height = maxHeight;
+          }
+        }
+  
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+  
+        canvas.toBlob((blob) => {
+          const resizedFile = new File([blob], file.name, {
+            type: file.type,
+          });
+          console.log(`Original file size: ${file.size} bytes`);
+          console.log(`Resized file size: ${resizedFile.size} bytes`);
+          resolve(resizedFile);
+        }, file.type, 0.8); // Adjust quality as needed
+      };
+  
+      reader.onerror = error => reject(error);
+      reader.readAsDataURL(file);
+    });
+  };
+  
+
+  const handleImageUpload = async (event) => {
     const files = Array.from(event.target.files);
-    const base64Promises = files.map(file => {
+    const maxWidth = 800;
+    const maxHeight = 600;
+
+    const resizedFiles = await Promise.all(files.map(file => resizeImage(file, maxWidth, maxHeight)));
+
+    const base64Promises = resizedFiles.map(file => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -75,7 +172,6 @@ const CarListingForm = () => {
       .then(base64Images => setImages(base64Images))
       .catch(error => console.error('Error uploading images:', error));
   };
-  
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./listings.css";
 import Filters from "../filters/filters.js";
-import axios, { all } from "axios";
+import axios from "axios";
 import { baseURL } from "../utils/constant.js";
 import { useNavigate } from "react-router-dom";
 import { FilterContext } from "../context/FilterContext.js";
@@ -19,14 +19,16 @@ function Listings() {
     const { yearValues } = useContext(YearContext);
     const { powerValues } = useContext(PowerContext);
     const [showFilters, setShowFilters] = useState(false);
-    const [page, setPage] = useState(2);
-
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(`${baseURL}/get`);
+                
+                console.log('Received data' + response.data)
                 const carData = response.data;
+                
                 setCars(carData);
             } catch (error) {
                 console.error("Error fetching car data:", error);
@@ -50,7 +52,7 @@ function Listings() {
             try {
                 const response = await axios.get(`${baseURL}/get/?page=${page+1}`);
                 const carData = response.data;
-                console.log('GREIT SAKSES')
+                // console.log('GREIT SAKSES');
                 setCars(carData);
             } catch (error) {
                 console.error("Error fetching car data:", error);
@@ -68,13 +70,13 @@ function Listings() {
                 const response = await axios.get(`${baseURL}/get/?page=${page-1}`);
                 const carData = response.data;
                 setCars(carData);
-                console.log(carData)
+                // console.log(carData)
             } catch (error) {
                 console.error("Error fetching car data:", error);
             }
         };
         setPage((prev) => prev - 1)
-        console.log('NAZAD NAZAD, KAMON, KAMON')
+        // console.log('NAZAD NAZAD, KAMON, KAMON')
 
         fetchData();
     };
@@ -82,6 +84,7 @@ function Listings() {
     const filterCars = (cars) => {
         return cars.filter((car) => {
             return Object.entries(selectedFilters).every(([key, value]) => {
+                debugger;
                 if (key === "Make") return car.make === value;
                 if (key === "Model") return car.model === value;
                 if (key === "Fuel") return car.fuelType === value;

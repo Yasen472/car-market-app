@@ -23,7 +23,7 @@ const CarouselListing = ({ images }) => {
             <button className="carousel-arrow left" onClick={goToPrevious}>
                 <FaArrowLeft />
             </button>
-            <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="carousel-image" />
+            {/* <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="carousel-image" /> */}
             <button className="carousel-arrow right" onClick={goToNext}>
                 <FaArrowRight />
             </button>

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { baseURL } from "../utils/constant.js";
 import { useAuth } from "../auth/authContext.js";
 import "./currentListing.css";
-import { CiSquareRemove } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 import CarouselListing from "../carousel/carouselListing.js";
 

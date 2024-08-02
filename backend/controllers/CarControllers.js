@@ -1,5 +1,5 @@
 const CarModel = require('../models/carModel.js');
-// const Model = require('../models/Model.js');
+const Model = require('../models/Model.js');
 
 module.exports.getCars = async (req, res) => {
     const page = parseInt(req.query.page) || 1;

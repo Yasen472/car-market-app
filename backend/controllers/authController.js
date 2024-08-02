@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 
 // Register User
 const registerUser = async (req, res) => {
-    console.log(req.body);
     const { email, password } = req.body;
 
     // Basic validation
@@ -50,7 +49,6 @@ const loginUser = async (req, res) => {
     try {
         // Check if the user exists
         const existingUser = await User.findOne({ email });
-        console.log(existingUser);
         if (!existingUser) {
             console.error('Login error: User not found');
             return res.status(400).json({ message: 'Invalid email or password.' });
@@ -58,9 +56,6 @@ const loginUser = async (req, res) => {
 
         // Check if the password is correct
         const isMatch = await bcrypt.compare(password, existingUser.password);
-        console.log(`Password is ${password}`)
-        console.log(`Existing user password is ${existingUser.password}`)
-        console.log(isMatch)
         if (!isMatch) {
             console.error('Login error: Incorrect password');
             return res.status(400).json({ message: 'Invalid email or password.' });

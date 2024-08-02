@@ -1,0 +1,10 @@
+First Idea:
+have two icons - one heart which is empty and another one which is full
+               - and when you click on the empty one it becomes full (changes the icon)
+I can have favourites section in the profile page which can be this way 
+myListings   | favourites
+----------     ----------
+and this way the user can see both
+
+Second Idea:
+have a button add to favourites - it will always be visible and if a user clicks on it and they are not logged in, a message should pop up - telling the user to login first 
