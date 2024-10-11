@@ -27,7 +27,7 @@ mongoose
   .catch((err) => console.error('Error connecting to MongoDB:', err));
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the Car API! Use /api/get to retrieve cars.');
+    res.send('Welcome to the Car API!');
 });
 
 app.use('/api', routes);
