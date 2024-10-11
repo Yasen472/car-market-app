@@ -193,7 +193,7 @@ const CarListingForm = () => {
         images: images,  // Append the base64 images array,
       };
 
-      await axios.post(`${baseURL}/save`, carData, {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/save`, carData, {
         headers: {
           'Content-Type': 'application/json' // Set content type to application/json
         }
@@ -209,7 +209,7 @@ const CarListingForm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${baseURL}/get/models`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/get/models`);
         const carData = response.data;
         const makes = new Set(
           carData
