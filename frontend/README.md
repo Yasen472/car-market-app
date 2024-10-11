@@ -13,16 +13,16 @@ The platform delivers a smooth user experience with:
 - Dynamic content updates
 - A personalized favorites list.
 
-## Technologies & tools used for this project:
-- React.js
-- Express.js
-- MongoDB
-- react-router
+## Technologies & Tools Used
 
-## How to run locally?
+- **Frontend**: React.js
+- **Backend**: Express.js
+- **Database**: MongoDB
+- **Routing**: react-router
 
-1. Clone the project.
-2. Run npm install to install all dependencies for both frontend and backend.
-3. Run npm start.
-4. Open http://localhost:3000 to view it in the browser.
+## Deployed Application URLs
 
+- **Backend**: [https://car-market-app-backend.onrender.com](https://car-market-app-backend.onrender.com)
+- **Frontend**: [https://car-market-app-frontend.onrender.com](https://car-market-app-frontend.onrender.com)
+
+Feel free to explore the application and provide feedback!
