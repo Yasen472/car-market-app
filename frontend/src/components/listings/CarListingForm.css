@@ -1,0 +1,142 @@
+.car-listing-container {
+  padding-top: 4rem;
+}
+
+.car-listing-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.car-select {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+  color: black;
+}
+
+.car-listing-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.car-listing-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-listing-form form div {
+  margin-bottom: 15px;
+}
+
+.car-listing-form form label {
+  margin-bottom: 5px;
+}
+
+.car-listing-form form input,
+.car-listing-form form select,
+.car-listing-form form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.car-listing-form form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.car-listing-form form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.car-listing-form form button:hover {
+  background-color: #0056b3;
+}
+
+.image-preview {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.image-preview .carousel .control-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: white;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.image-preview .carousel .control-prev.control-arrow {
+  left: 10px;
+}
+
+.image-preview .carousel .control-next.control-arrow {
+  right: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .image-preview .carousel .control-arrow {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .image-preview .carousel .control-arrow {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .image-preview .carousel .control-arrow {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .image-preview .carousel .control-arrow {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .image-preview .carousel .control-arrow {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 22px;
+  }
+}
+

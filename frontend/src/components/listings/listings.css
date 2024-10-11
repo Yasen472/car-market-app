@@ -1,0 +1,360 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    width: calc(100% - 150px);
+}
+
+.card_details {
+    padding: 10px;
+}
+
+.car-image {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+}
+
+.bottom-right-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.car-image {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+}
+
+.car-image:hover {
+    filter: brightness(0.7);
+    transition: filter 0.3s ease-in-out;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.page-arrows-container,
+.page-numbers {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.page-arrows-container>p,
+.page-button {
+    border: 1px solid #0077ff;
+    border-radius: 5px;
+    padding: 3.5px 6px;
+    cursor: pointer;
+    background-color: white;
+    color: #0077ff;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-arrows-container>p:hover,
+.page-button:hover {
+    background-color: #0077ff;
+    color: white;
+}
+
+.page-arrows-container>p.disabled,
+.page-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.page-button.active {
+    background-color: #0077ff;
+    color: white;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    overflow-y: auto;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    z-index: 4;
+    overflow-y: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.filter-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.filter-icon svg {
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.car-details-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.car-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.transmission-icon {
+    object-fit: contain;
+}
+
+.close-filters-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.rows-container {
+    display: flex;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.name-header {
+    font-weight: 300;
+    color: black;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #0077ff;
+    padding: 4px 0px;
+}
+
+.car-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0px;
+    font-size: 1rem;
+    color: black;
+}
+
+.icon-container>img,
+.icon-container>svg {
+    width: 20px;
+    height: 20px;
+}
+
+.enter-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+}
+
+.enter-icon {
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1200px) {
+    .overlay-content {
+        max-width: 1200px;
+    }
+
+    .wrapper {
+        padding-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+    #container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .car-details {
+        font-size: 1.3rem;
+    }
+    
+    .icon-container {
+        font-size: 0.9rem;
+    }
+
+    .overlay-content {
+        max-width: 800px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .car-details {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1.2rem;
+    }
+    
+    .icon-container {
+        gap: 6px;
+    }
+    
+    .name-header {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .car-details {
+        font-size: 1.1rem;
+    }
+    
+    .icon-container {
+        font-size: 0.85rem;
+    }
+    
+    .icon-container > img,
+    .icon-container > svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .name-header {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .filter-icon {
+        margin-bottom: 3rem;
+    }
+    
+    .car-image {
+        height: 200px;
+    }
+    
+    .cards {
+        justify-self: center;
+    }
+    
+    .overlay-content {
+        width: 100%;
+    }
+    
+    .close-filters-btn {
+        font-size: 1.2rem;
+        padding: 4px 8px;
+        margin-top: 1rem;
+    }
+    
+    .car-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        font-size: 1rem;
+    }
+    
+    .icon-container {
+        font-size: 0.8rem;
+    }
+    
+    .icon-container > img,
+    .icon-container > svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .name-header {
+        font-size: 1.2rem;
+    }
+    
+    .enter-icon-container {
+        font-size: 1.5rem;
+    }
+}

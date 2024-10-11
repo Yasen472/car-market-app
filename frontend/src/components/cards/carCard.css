@@ -1,0 +1,191 @@
+.card {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.card_details {
+    padding: 10px;
+}
+
+.car-image {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+}
+
+.bottom-right-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.car-image {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    cursor: pointer;
+}
+
+.car-image:hover {
+    filter: brightness(0.7);
+    transition: filter 0.3s ease-in-out;
+}
+
+
+.car-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0px;
+    font-size: 1rem;
+    color: black;
+}
+
+.icon-container>img,
+.icon-container>svg {
+    width: 20px;
+    height: 20px;
+}
+
+.enter-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+}
+
+.enter-icon {
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1200px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        max-height: 350px; 
+    }
+    
+    .car-image {
+        height: 200px; 
+    }
+
+    .card_details {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    
+    .car-details {
+        font-size: 1.3rem;
+    }
+    
+    .icon-container {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .car-details {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1.2rem;
+    }
+    
+    .icon-container {
+        gap: 6px;
+    }
+    
+    .name-header {
+        font-size: 1.6rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .car-details {
+        font-size: 1.1rem;
+    }
+    
+    .icon-container {
+        font-size: 0.85rem;
+    }
+    
+    .icon-container > img,
+    .icon-container > svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .name-header {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    
+    .car-image {
+        height: 200px;
+    }
+    
+    .cards {
+        justify-self: center;
+    }
+    
+    .car-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        font-size: 1rem;
+    }
+    
+    .icon-container {
+        font-size: 0.8rem;
+    }
+    
+    .icon-container > img,
+    .icon-container > svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .name-header {
+        font-size: 1.2rem;
+    }
+    
+    .enter-icon-container {
+        font-size: 1.5rem;
+    }
+}
