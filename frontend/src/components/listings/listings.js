@@ -3,6 +3,7 @@ import "./listings.css";
 import Filters from "../filters/filters.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth/authContext.js";
 import { FilterContext } from "../context/FilterContext.js";
 import { PriceContext } from "../context/PriceContext.js";
 import { YearContext } from "../context/YearContext.js";
@@ -11,6 +12,7 @@ import { KilometresContext } from "../context/KilometresContext.js";
 import { FaFilter } from "react-icons/fa";
 import Loader from "../loader/loader.js";
 import CarCard from "../cards/carCard.js";
+
 
 function Listings() {
     const [cars, setCars] = useState([]); // Paginated cars from backend
@@ -25,6 +27,7 @@ function Listings() {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [loading, setLoading] = useState(false); // Add loading state
+    const { isLoggedIn, userId } = useAuth(); // Access isLoggedIn and userId
 
     const carsPerPage = 10; // Adjust this to your preferred page size
     const navigate = useNavigate();
@@ -36,7 +39,13 @@ function Listings() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/get/?page=${page}`);
                 const carData = response.data.cars;
-                setCars(carData);
+
+                // Filter out cars if the user is logged in and exclude their own listings
+                const filteredCarData = isLoggedIn 
+                    ? carData.filter((car) => car.ownerId !== userId)
+                    : carData; // No filtering if not logged in
+
+                setCars(filteredCarData);
                 setTotalPages(response.data.totalPages);
             } catch (error) {
                 console.error("Error fetching car data:", error);
@@ -46,7 +55,7 @@ function Listings() {
             }
         };
         fetchData();
-    }, [page]);
+    }, [page, isLoggedIn, userId]);
 
     // Fetch all cars from the backend to be used for filtering
     useEffect(() => {
@@ -55,7 +64,13 @@ function Listings() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/get`);
                 const allCarsData = response.data.allCars;
-                setAllCars(allCarsData);
+
+                // Filter out cars if the user is logged in and exclude their own listings
+                const filteredAllCarsData = isLoggedIn 
+                    ? allCarsData.filter((car) => car.ownerId !== userId)
+                    : allCarsData; // No filtering if not logged in
+
+                setAllCars(filteredAllCarsData);
             } catch (error) {
                 console.error(error);
             } finally {
@@ -64,7 +79,7 @@ function Listings() {
         };
 
         fetchAllCars();
-    }, []);
+    }, [isLoggedIn, userId]);
 
     // Helper function to check if any filter is applied
     const isAnyFilterApplied = () => {
