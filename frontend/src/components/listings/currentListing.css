@@ -39,22 +39,6 @@
     flex: 1 1 30%; 
 }
 
-.left-content .carousel-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.left-content>.carousel-container>img {
-    max-height: 500px;
-}
-
-.left-content .carousel-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
 .bookmark-icon {
     position: absolute;
     top: 25px;
@@ -384,12 +368,6 @@ hr {
 
     .left-content .carousel-container {
         margin: auto;
-        width: 100%;
-    }
-    
-
-    .left-content>.carousel-container>.carousel-image {
-        max-height: 200px;
     }
 
     .listing-header {

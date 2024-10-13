@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import './customCarousel.css'; 
+import './customCarousel.css';
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
-const CustomCarousel = ({ images, showArrows = true }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const CustomCarousel = ({ images }) => {
 
     const goToPrevious = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
@@ -14,22 +13,24 @@ const CustomCarousel = ({ images, showArrows = true }) => {
     };
 
     if (!images || images.length === 0) {
-        return null; 
+        showArrows = false;
+        return null;
     }
 
     return (
         <div className="carousel-container">
-            {showArrows && (
-                <button className="carousel-arrow left" onClick={goToPrevious}>
-                    <FaArrowLeft />
-                </button>
-            )}
-            <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="carousel-image" />
-            {showArrows && (
-                <button className="carousel-arrow right" onClick={goToNext}>
-                    <FaArrowRight />
-                </button>
-            )}
+            {showArrows? (
+                <>
+                    <button className="carousel-arrow left" onClick={goToPrevious}>
+                        <FaArrowLeft />
+                    </button>
+                    <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="carousel-image" />
+                    <button className="carousel-arrow right" onClick={goToNext}>
+                        <FaArrowRight />
+                    </button>
+                </>
+            ) : (
+                <img src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} className="carousel-image" />)}
         </div>
     );
 };

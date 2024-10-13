@@ -687,7 +687,6 @@ const CarListingForm = () => {
     fetchTotalListings();
   }, []);
 
-  const showPagination = totalListings > 1 && car.ownerId !== userId;
 
   return (
     <div className="car-listing-container">
@@ -863,11 +862,6 @@ const CarListingForm = () => {
         </form>
         {submitted && <p>Car listing submitted successfully!</p>}
       </div>
-      {showPagination && (
-        <div className="pagination-container">
-          {/* Your pagination component goes here */}
-        </div>
-      )}
     </div>
   );
 };

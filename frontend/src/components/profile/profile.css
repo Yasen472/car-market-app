@@ -1,6 +1,5 @@
 .profile-page-container {
   height: calc(100vh - 60px);
-  background-color: white; 
 }
 
 .profile-container {
@@ -10,7 +9,6 @@
   gap: 20px;
   flex-wrap: wrap;
   padding: 20px; 
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
 }
 
 /* Section Styling */
