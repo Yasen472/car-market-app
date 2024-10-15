@@ -60,7 +60,6 @@
       position: fixed;
       top: 60px;
       right: -100%;
-      /* Start completely off the screen */
       width: 100%;
       flex-direction: column;
       background-color: rgba(0, 0, 0, 0.9);
@@ -69,17 +68,13 @@
       padding-top: 20px;
       padding-left: 20px;
       transition: right 0.5s ease, opacity 0.5s ease;
-      /* Add smooth transition for position and opacity */
       opacity: 0;
-      /* Initially hidden */
       z-index: 999;
     }
 
     .links.active {
       right: 0;
-      /* Slide in from the right */
       opacity: 1;
-      /* Fade in */
     }
 
     .links>a {
