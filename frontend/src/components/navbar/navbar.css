@@ -10,7 +10,7 @@
   height: 60px;
   font-family: Nunito;
   position: relative;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .nav-link-header {
@@ -27,7 +27,7 @@
   height: 100%;
 }
 
-.links > a {
+.links>a {
   display: flex;
   justify-content: center;
   color: #000;
@@ -37,7 +37,7 @@
   border-bottom: none;
 }
 
-.links > a:hover {
+.links>a:hover {
   color: #0077ff;
 }
 
@@ -48,42 +48,53 @@
 }
 
 @media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: black;
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: black;
+    }
+
+    .links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      /* Start completely off the screen */
+      width: 100%;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 20px;
+      padding-left: 20px;
+      transition: right 0.5s ease, opacity 0.5s ease;
+      /* Add smooth transition for position and opacity */
+      opacity: 0;
+      /* Initially hidden */
+      z-index: 999;
+    }
+
+    .links.active {
+      right: 0;
+      /* Slide in from the right */
+      opacity: 1;
+      /* Fade in */
+    }
+
+    .links>a {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: left;
+      transition: background-color 0.3s;
+    }
+
+    .links>a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 
-  .links {
-    position: fixed; 
-    top: 60px; 
-    right: -100%;
-    width: 100%;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 20px;
-    padding-left: 20px;
-    transition: right 0.3s ease;
-    z-index: 999; 
-  }
-
-  .links.active {
-    right: 0; /* Slide in from the right */
-  }
-
-  .links > a {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 1.5rem;
-    text-align: left;
-  }
-
-  .links > a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}  
+}
