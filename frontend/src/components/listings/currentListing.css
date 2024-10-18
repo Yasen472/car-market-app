@@ -27,14 +27,14 @@
 .left-content {
     display: flex;
     flex-direction: column;
-    flex: 1 1 60%; 
+    flex: 1 1 60%;
 }
 
 .right-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 1 35%; 
+    flex: 1 1 35%;
 }
 
 .bookmark-icon {
@@ -43,7 +43,7 @@
     right: 15px;
     font-size: 3rem;
     cursor: pointer;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .specs-container {
@@ -112,7 +112,7 @@
 
 .specs-values-container {
     grid-column: 2 / 3;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .description-container {
@@ -270,7 +270,78 @@ hr {
     gap: 10px;
 }
 
+
+@media (max-width: 400px) {
+    /* Ensure responsive and flexible grid layout */
+    .specs-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Equal columns for label and value */
+        gap: 10px; /* Add some space between label and value */
+    }
+
+    /* Ensure long text wraps */
+    .specs-header-column, 
+    .specs-values-container {
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* Allow wrapping of text */
+    }
+
+    /* Ensure proper alignment of text */
+    .specs-header-column {
+        text-align: right; /* Align label text to the right */
+        padding-right: 10px; /* Add some padding for better spacing */
+    }
+
+    .specs-values-container {
+        text-align: left; /* Align value text to the left */
+    }
+
+    .specs-header-column {
+        font-size: 0.9rem;
+    }
+
+    /* Dynamically adjust font size to make content fit */
+    .specs-values-container, .categories-container {
+        font-size: 0.85rem; /* Slightly smaller font */
+    }
+
+    /* Adjust container padding for smaller screens */
+    .specs-container {
+        padding: 8px; /* Reduce padding to accommodate more content */
+    }
+
+    /* Ensure that content does not overflow */
+    .specs-header-column, .specs-values-container {
+        min-width: 110px; /* Allow columns to shrink if necessary */
+    }
+
+    .description-header {
+        font-size: 0.9rem;
+    }
+}
+
+/* For even smaller screens, stack label and value vertically */
+@media (max-width: 320px) {
+    .specs-container {
+        grid-template-columns: 1fr; /* Stack label and value vertically */
+    }
+
+    /* Align labels and values for stacked layout */
+    .specs-header-column, .specs-values-container {
+        text-align: left;
+        padding: 5px 0; /* Add padding between stacked items */
+    }
+}
+
+
+
+
+
 @media (max-width: 480px) {
+
+
 
     .categories-container,
     .specs-container {
@@ -337,7 +408,11 @@ hr {
         font-size: 1.5rem;
     }
 
-    .right-content > .icon-item, .icon-item-price, .contact-button, .share-button, .edit-save-container {
+    .right-content>.icon-item,
+    .icon-item-price,
+    .contact-button,
+    .share-button,
+    .edit-save-container {
         font-size: 1rem;
     }
 
@@ -345,9 +420,13 @@ hr {
         gap: 2px;
     }
 
+    hr {
+        width: 85vw;
+    }
+
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
 
     .content-container {
         display: block;
@@ -392,27 +471,41 @@ hr {
 
 }
 
-@media screen and (min-width: 1024px) {
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+    
+    .right-content {
+        margin-top: -1rem;
+    }
 
+    .listing-header {
+        font-size: 2rem;
+    }
+
+}
+
+
+@media only screen and (min-width: 1280px) {
     .main-content-container {
         max-width: 80%;
     }
 
     .listing-header {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
-    .right-content {
-        gap: 15px;
+    /* .right-content {
+        gap: 20px;
+    } */
+
+    .icon-item, .icon-item-price {
+        padding-bottom: 40px;
     }
 
     .listing-header {
-        font-weight: 800;
+        font-weight: bold;
     }
 
     .contact-share-buttons {
         padding-top: 10px;
     }
-
 }
-
