@@ -1,54 +1,95 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './customCarousel.css';
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const CarouselListing = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isExpanded, setIsExpanded] = useState(false);
 
-    const goToPrevious = () => {
+    const goToPrevious = (e) => {
+        e.stopPropagation();
         setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
-    const goToNext = () => {
+    const goToNext = (e) => {
+        e.stopPropagation();
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    useEffect(() => {
+        if (isExpanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isExpanded]);
 
     if (!images || images.length === 0) {
         return <div>Loading...</div>;
     }
 
     return (
-        <div className="carousel-container">
-            <button 
-                className="carousel-arrow left" 
-                onClick={goToPrevious} 
+        <div className={`carousel-container ${isExpanded ? 'expanded' : ''}`}>
+            <img
+                src={images[currentIndex]}
+                alt={`Image ${currentIndex + 1} of ${images.length}`}
+                className="carousel-image"
+                onClick={toggleExpand}
+            />
+            <button
+                className="carousel-arrow left"
+                onClick={goToPrevious}
                 aria-label="Previous Image"
             >
-                <FaArrowLeft />
+                <ChevronLeft />
             </button>
-            <img 
-                src={images[currentIndex]} 
-                alt={`Image ${currentIndex + 1} of ${images.length}`} 
-                className="carousel-image" 
-            />
-            <button 
-                className="carousel-arrow right" 
-                onClick={goToNext} 
+            <button
+                className="carousel-arrow right"
+                onClick={goToNext}
                 aria-label="Next Image"
             >
-                <FaArrowRight />
+                <ChevronRight />
             </button>
-            <div className="thumbnail-container">
-                {images.map((image, index) => (
-                    <img
-                        key={index}
-                        src={image}
-                        alt={`Thumbnail ${index + 1}`}
-                        className={`thumbnail ${currentIndex === index ? 'active' : ''}`}
-                        onClick={() => setCurrentIndex(index)}
-                    />
-                ))}
-            </div>
+            {!isExpanded && (
+                <div className="thumbnail-container">
+                    {images.map((image, index) => (
+                        <img
+                            key={index}
+                            src={image}
+                            alt={`Thumbnail ${index + 1}`}
+                            className={`thumbnail ${currentIndex === index ? 'active' : ''}`}
+                            onClick={() => setCurrentIndex(index)}
+                        />
+                    ))}
+                </div>
+            )}
+            {isExpanded && (
+                <div className="expanded-image-overlay" onClick={toggleExpand}>
+                    <div className="expanded-image-container">
+                        <img
+                            src={images[currentIndex]}
+                            alt={`Expanded Image ${currentIndex + 1} of ${images.length}`}
+                            className="expanded-image"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                    <button
+                        onClick={toggleExpand}
+                        className="close-button"
+                        aria-label="Close expanded image"
+                    >
+                        <X />
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

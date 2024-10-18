@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './CarListingForm.css';
 import SquareCarousel from '../carousel/squareCarousel.js';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useAuth } from '../auth/authContext.js';
 import { useNavigate } from 'react-router-dom'
 

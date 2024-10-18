@@ -17,6 +17,7 @@ import { FaPhone } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa"; //edit icon
 import { MdDeleteForever } from "react-icons/md"; //delete icon
 import { BsFillFuelPumpFill } from "react-icons/bs"; // fuel
+import { SlSpeedometer } from "react-icons/sl"; // kilometres
 
 const CurrentListing = () => {
     const { id } = useParams();
@@ -171,6 +172,21 @@ const CurrentListing = () => {
                                 />
                             ) : (
                                 <span>{car.price} lv.</span>
+                            )}
+                        </div>
+
+                        <div className="icon-item">
+                            <SlSpeedometer />
+                            {isEditing ? (
+                                <input
+                                    className="editable-input"
+                                    type="text"
+                                    name="price"
+                                    value={editedCar.kilometres}
+                                    onChange={handleInputChange}
+                                />
+                            ) : (
+                                <span>{car.kilometres} km.</span>
                             )}
                         </div>
 
