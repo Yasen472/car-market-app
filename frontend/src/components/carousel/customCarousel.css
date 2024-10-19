@@ -2,18 +2,18 @@
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    max-width: 800px;
+    margin: auto;
     overflow: hidden;
+    aspect-ratio: 16/9;
 }
 
 /* Image styles */
 .carousel-image {
     width: 100%;
-    height: auto;
-    max-height: 60vh;
+    height: 100%;
+    object-fit: cover;
     transition: all 0.3s ease;
-    object-fit: contain;
 }
 
 /* Arrow button styling */
@@ -70,8 +70,10 @@
 
 /* Expanded image */
 .expanded-image {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
 }
 
@@ -92,7 +94,7 @@
 /* Close button for expanded mode */
 .close-button {
     position: fixed;
-    top: 20px;
+    top: 80px; /* Adjust this value based on the height of your navbar */
     right: 20px;
     z-index: 1003;
     background: white;
@@ -108,12 +110,14 @@
     justify-content: center;
     margin-top: 10px;
     flex-wrap: wrap;
+    max-width: 800px;
+    margin: 10px auto 0;
 }
 
 /* Thumbnail image */
 .thumbnail {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     margin: 5px;
     cursor: pointer;
@@ -128,6 +132,10 @@
 
 /* Media queries */
 @media only screen and (max-width: 600px) {
+    .carousel-container {
+        max-width: 100%;
+    }
+
     .carousel-arrow {
         width: 30px;
         height: 30px;
@@ -150,18 +158,22 @@
     }
 
     .thumbnail {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     .close-button {
-        top: 10px;
+        top: 60px; /* Adjust for smaller screens */
         right: 10px;
         padding: 5px;
     }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .carousel-container {
+        max-width: 600px;
+    }
+
     .carousel-arrow {
         width: 35px;
         height: 35px;
@@ -184,19 +196,24 @@
     }
 
     .thumbnail {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .close-button {
+        top: 70px; /* Adjust for medium screens */
+        right: 15px;
+        padding: 8px;
     }
 }
 
 @media only screen and (min-width: 1025px) {
     .carousel-container {
-        max-width: 1000px;
-        margin: 0 auto;
+        max-width: 800px;
     }
 
     .carousel-image {
-        max-height: 70vh;
+        max-height: 500px;
     }
 
     .carousel-arrow {
@@ -218,5 +235,10 @@
 
     .carousel-container.expanded .carousel-arrow.right {
         right: 30px;
+    }
+
+    .close-button {
+        top: 80px; /* Adjust for larger screens */
+        right: 20px;
     }
 }

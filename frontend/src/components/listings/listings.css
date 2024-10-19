@@ -13,6 +13,27 @@
     width: calc(100% - 150px);
 }
 
+.no-listings-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem; /* Adjust font size */
+    width: 100%; /* Ensure it takes the full width */
+    height: calc(100vh - 60px);
+    font-weight: bold;
+}
+
+#container.no-listings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: calc(100vh - 100px); */
+}
+
+
+
 .card_details {
     padding: 10px;
 }
@@ -206,6 +227,7 @@
     padding-top: 10px;
 }
 
+
 .icon-container {
     display: flex;
     align-items: center;
@@ -240,6 +262,15 @@
     .wrapper {
         padding-top: 2rem;
     }
+
+    .pagination-container {
+        padding-top: 20px;
+    }
+
+    #container.no-listings {
+        height: calc(100vh - 100px);
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
