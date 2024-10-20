@@ -4,7 +4,6 @@
     width: 100%;
     max-width: 800px;
     margin: auto;
-    overflow: hidden;
     aspect-ratio: 16/9;
 }
 
@@ -94,7 +93,7 @@
 /* Close button for expanded mode */
 .close-button {
     position: fixed;
-    top: 80px; /* Adjust this value based on the height of your navbar */
+    top: 80px;
     right: 20px;
     z-index: 1003;
     background: white;
@@ -104,38 +103,10 @@
     cursor: pointer;
 }
 
-/* Thumbnail container */
-.thumbnail-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 10px auto 0;
-}
-
-/* Thumbnail image */
-.thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin: 5px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.thumbnail.active {
-    opacity: 1;
-    border: 2px solid #007bff;
-}
+/* Existing styles remain the same... */
 
 /* Media queries */
 @media only screen and (max-width: 600px) {
-    .carousel-container {
-        max-width: 100%;
-    }
-
     .carousel-arrow {
         width: 30px;
         height: 30px;
@@ -157,13 +128,8 @@
         right: 10px;
     }
 
-    .thumbnail {
-        width: 50px;
-        height: 50px;
-    }
-
     .close-button {
-        top: 60px; /* Adjust for smaller screens */
+        top: 60px;
         right: 10px;
         padding: 5px;
     }
@@ -171,7 +137,13 @@
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .carousel-container {
-        max-width: 600px;
+        width: 100%;
+        /* max-width: none; */
+    }
+
+    .carousel-image {
+        width: 100%;
+        /* max-width: none; */
     }
 
     .carousel-arrow {
@@ -195,13 +167,8 @@
         right: 15px;
     }
 
-    .thumbnail {
-        width: 60px;
-        height: 60px;
-    }
-
     .close-button {
-        top: 70px; /* Adjust for medium screens */
+        top: 70px;
         right: 15px;
         padding: 8px;
     }
@@ -209,7 +176,7 @@
 
 @media only screen and (min-width: 1025px) {
     .carousel-container {
-        max-width: 800px;
+        max-width: 1000px;
     }
 
     .carousel-image {
@@ -238,7 +205,8 @@
     }
 
     .close-button {
-        top: 80px; /* Adjust for larger screens */
+        top: 80px;
         right: 20px;
     }
+
 }

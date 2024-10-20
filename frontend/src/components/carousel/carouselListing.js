@@ -58,19 +58,6 @@ const CarouselListing = ({ images }) => {
             >
                 <ChevronRight />
             </button>
-            {!isExpanded && (
-                <div className="thumbnail-container">
-                    {images.map((image, index) => (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Thumbnail ${index + 1}`}
-                            className={`thumbnail ${currentIndex === index ? 'active' : ''}`}
-                            onClick={() => setCurrentIndex(index)}
-                        />
-                    ))}
-                </div>
-            )}
             {isExpanded && (
                 <div className="expanded-image-overlay" onClick={toggleExpand}>
                     <div className="expanded-image-container">

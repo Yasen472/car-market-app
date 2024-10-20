@@ -472,40 +472,47 @@ hr {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1280px) {
-    
+
     .right-content {
-        margin-top: -1rem;
+        margin-top: -10px;
     }
 
     .listing-header {
         font-size: 2rem;
     }
 
+    .icon-item, .icon-item-price {
+        padding-bottom: 18px;
+    }
+
+
 }
 
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1281px) {
     .main-content-container {
         max-width: 80%;
     }
 
     .listing-header {
         font-size: 2.6rem;
+        font-weight: bold;
     }
 
-    /* .right-content {
-        gap: 20px;
-    } */
+    .right-content {
+        margin-top: -15px;
+    }
 
     .icon-item, .icon-item-price {
-        padding-bottom: 40px;
-    }
-
-    .listing-header {
-        font-weight: bold;
+        padding-bottom: 20px;
     }
 
     .contact-share-buttons {
         padding-top: 10px;
     }
+
+    .specs-container {
+        margin-top: 20px;
+    }
+
 }
