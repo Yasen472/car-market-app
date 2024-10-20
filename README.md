@@ -22,7 +22,7 @@ The platform delivers a smooth user experience with:
 
 ## Deployed Application URLs
 
-- **Backend**: [https://car-market-app-backend.onrender.com](https://car-market-app-backend.onrender.com)
+- **Backend**: [https://car-market-app-backend.onrender.com](https://car-market-app-backend.onrender.com) - (open this link first and after that open the link which contains the frontend)
 - **Frontend**: [https://car-market-app-frontend.onrender.com](https://car-market-app-frontend.onrender.com)
 
 Feel free to explore the application and provide feedback!
