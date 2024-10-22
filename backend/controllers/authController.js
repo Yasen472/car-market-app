@@ -1,11 +1,9 @@
 const User = require('../models/userModel.js');
 const bcrypt = require('bcrypt');
 
-// Register User
 const registerUser = async (req, res) => {
     const { email, password } = req.body;
 
-    // Basic validation
     if (!email || !password) {
         return res.status(400).json({ message: 'Please fill in all fields.' });
     }
@@ -37,11 +35,9 @@ const registerUser = async (req, res) => {
     }
 };
 
-// Login User
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
-    // Basic validation
     if (!email || !password) {
         return res.status(400).json({ message: 'Please fill in all fields.' });
     }

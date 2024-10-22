@@ -26,12 +26,11 @@ module.exports.getCars = async (req, res) => {
 
         const allCars = await CarModel.find();
 
-        // Send the response with separate fields
         res.json({
             allCars,
-            cars,            // Send the cars array
-            totalPages,      // Send the total number of pages
-            currentPage: page // Send the current page number
+            cars,          
+            totalPages,     
+            currentPage: page
         });
     } catch (error) {
         console.error("Error fetching cars:", error);

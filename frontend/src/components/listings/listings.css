@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-#container {
+/* #container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
@@ -14,6 +14,34 @@
 }
 
 .no-listings-message {
+    display: flex;
+    height: calc(100vh - 60px);
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+} */
+
+#container {
+    display: grid; /* Maintain grid layout */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    width: calc(100% - 150px);
+    /* Add any other existing styles */
+}
+
+/* Style when no listings are found */
+#container.no-listings {
+    height: calc(100vh - 60px); /* Adjust height to fit the viewport */
+    align-items: center; /* Center items vertically */
+    justify-items: center; /* Center items horizontally */
+}
+
+.no-listings-message {
+    grid-column: 1 / -1; /* Span across all columns in the grid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Occupy full height of the container */
     font-weight: bold;
 }
 

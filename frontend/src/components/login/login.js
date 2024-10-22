@@ -35,7 +35,7 @@ const Login = () => {
             const response = await axios.post(`${process.env.REACT_APP_AUTH_URL}/login`, { email, password });
 
             if (response.status === 200) {
-                const userId = response.data.userId; // Assuming the server sends back a userId
+                const userId = response.data.userId;
                 console.log('Login successful:', response.data);
                 login(userId);
 

@@ -1,16 +1,15 @@
 import React from 'react';
-import { MdLocationOn } from "react-icons/md"; // location
-import { BsFillFuelPumpFill } from "react-icons/bs"; // fuel
-import { SlSpeedometer } from "react-icons/sl"; // kilometres
-import TransmissionImage from '../images/gearbox.jpg'; // Transmission image
-import { TbEngine } from "react-icons/tb"; // engine capacity
-import { GiCarDoor } from "react-icons/gi"; // doorsCount
-import { LuArrowUpRight } from "react-icons/lu"; // arrow icon
+import { MdLocationOn } from "react-icons/md"; 
+import { BsFillFuelPumpFill } from "react-icons/bs";
+import { SlSpeedometer } from "react-icons/sl"; 
+import TransmissionImage from '../images/gearbox.jpg';
+import { TbEngine } from "react-icons/tb"; 
+import { GiCarDoor } from "react-icons/gi"; 
+import { LuArrowUpRight } from "react-icons/lu";
 import "./carCard.css"
 
 const CarCard = ({ car, onClick }) => {
 
-    // Utility function to format kilometres
     const formatKilometres = (kilometres) => {
         if (kilometres >= 1000) {
             return `${(kilometres / 1000).toFixed(0)}k`; // Format to '100k'

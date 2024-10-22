@@ -11,7 +11,6 @@
   padding: 20px; 
 }
 
-/* Section Styling */
 .section {
   flex: 1 1 48%; 
   background-color: white;
@@ -63,7 +62,6 @@
   margin: 4px 0;
 }
 
-/* Mobile screens (600px and down) */
 @media only screen and (max-width: 600px) {
   .profile-container {
     flex-direction: column; 
@@ -119,7 +117,6 @@
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
   .profile-container {
     flex-direction: column;
@@ -138,7 +135,6 @@
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .profile-container {
     flex-direction: row;
@@ -165,7 +161,6 @@
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .profile-container {
     flex-direction: row;
@@ -192,10 +187,9 @@
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .car-list {
-    grid-template-columns: repeat(3, 1fr); /* Three cars per row */
+    grid-template-columns: repeat(3, 1fr); 
   }
 
   .car-list .car-card img {

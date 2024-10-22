@@ -60,9 +60,9 @@ function Profile() {
                         {userCars.length > 0 ? (
                             userCars.map((car) => (
                                 <CarCard 
-                                    key={car._id} // Unique key for each car
-                                    car={car} // Pass car data as a prop
-                                    onClick={() => handleViewButtonClick(car._id)} // Pass click handler
+                                    key={car._id}
+                                    car={car} 
+                                    onClick={() => handleViewButtonClick(car._id)}
                                 />
                             ))
                         ) : (
@@ -77,9 +77,9 @@ function Profile() {
                         {favouriteCars.length > 0 ? (
                             favouriteCars.map((car) => (
                                 <CarCard 
-                                    key={car._id} // Unique key for each car
-                                    car={car} // Pass car data as a prop
-                                    onClick={() => handleViewButtonClick(car._id)} // Pass click handler
+                                    key={car._id}
+                                    car={car} 
+                                    onClick={() => handleViewButtonClick(car._id)} 
                                 />
                             ))
                         ) : (

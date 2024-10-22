@@ -198,7 +198,6 @@ const CarListingForm = () => {
       });
 
       setSubmitted(true);
-      console.log('Success');
       navigate('/')
     } catch (error) {
       console.error('Error saving car:', error);

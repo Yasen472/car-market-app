@@ -1,4 +1,3 @@
-/* Carousel container */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -7,7 +6,6 @@
     aspect-ratio: 16/9;
 }
 
-/* Image styles */
 .carousel-image {
     width: 100%;
     height: 100%;
@@ -15,7 +13,6 @@
     transition: all 0.3s ease;
 }
 
-/* Arrow button styling */
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -34,7 +31,6 @@
     transition: all 0.3s ease;
 }
 
-/* Positioning arrows */
 .carousel-arrow.left {
     left: 10px;
 }
@@ -43,7 +39,6 @@
     right: 10px;
 }
 
-/* Expanded image overlay */
 .expanded-image-overlay {
     position: fixed;
     top: 0;
@@ -57,7 +52,6 @@
     z-index: 1000;
 }
 
-/* Expanded image container */
 .expanded-image-container {
     position: relative;
     width: 100%;
@@ -67,7 +61,6 @@
     align-items: center;
 }
 
-/* Expanded image */
 .expanded-image {
     max-width: 90vw;
     max-height: 90vh;
@@ -76,7 +69,6 @@
     object-fit: contain;
 }
 
-/* Arrows for expanded view */
 .carousel-container.expanded .carousel-arrow {
     position: fixed;
     background: rgba(255, 255, 255, 0.3);
@@ -90,7 +82,6 @@
     right: 20px;
 }
 
-/* Close button for expanded mode */
 .close-button {
     position: fixed;
     top: 80px;
@@ -103,9 +94,6 @@
     cursor: pointer;
 }
 
-/* Existing styles remain the same... */
-
-/* Media queries */
 @media only screen and (max-width: 600px) {
     .carousel-arrow {
         width: 30px;
@@ -138,12 +126,10 @@
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .carousel-container {
         width: 100%;
-        /* max-width: none; */
     }
 
     .carousel-image {
         width: 100%;
-        /* max-width: none; */
     }
 
     .carousel-arrow {

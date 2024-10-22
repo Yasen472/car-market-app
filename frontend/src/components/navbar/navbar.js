@@ -2,30 +2,29 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useAuth } from "../auth/authContext.js";
-import { FaBars } from 'react-icons/fa'; // Import the hamburger icon
+import { FaBars } from 'react-icons/fa'; 
 
 const Navbar = () => {
     const { isLoggedIn, logout } = useAuth();
     const navigate = useNavigate();
-    const [menuOpen, setMenuOpen] = useState(false); // State to handle mobile menu
+    const [menuOpen, setMenuOpen] = useState(false); 
 
     const handleLogout = () => {
         logout();
         navigate("/");
-        setMenuOpen(false); // Close the menu on logout
+        setMenuOpen(false); 
     };
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen); // Toggle menu visibility
+        setMenuOpen(!menuOpen);
     };
 
     const handleLinkClick = () => {
-        setMenuOpen(false); // Close the menu when a link is clicked
+        setMenuOpen(false);
     };
 
     return (
         <div className="navbar-container">
-            {/* Close menu when BGCARS is clicked */}
             <Link to="/" className="nav-link-header" onClick={handleLinkClick}>
                 BGCARS
             </Link>
@@ -52,7 +51,6 @@ const Navbar = () => {
                 )}
             </div>
 
-            {/* Hamburger Icon for Mobile */}
             <div className="menu-icon" onClick={toggleMenu}>
                 <FaBars />
             </div>

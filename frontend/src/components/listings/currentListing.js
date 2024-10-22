@@ -5,19 +5,19 @@ import { useAuth } from "../auth/authContext.js";
 import "./currentListing.css";
 import { useNavigate } from "react-router-dom";
 import CarouselListing from "../carousel/carouselListing.js";
-import { CiHeart } from "react-icons/ci"; //empty heart
-import { FaHeart } from "react-icons/fa"; //full heart
-import { MdLocationOn } from "react-icons/md"; //location
-import { GiMoneyStack } from "react-icons/gi"; //price 
-import { IoMdPerson } from "react-icons/io"; //from (seller)
-import { AiOutlineShareAlt } from "react-icons/ai"; // phone and share icons
+import { CiHeart } from "react-icons/ci"; 
+import { FaHeart } from "react-icons/fa"; 
+import { MdLocationOn } from "react-icons/md";
+import { GiMoneyStack } from "react-icons/gi"; 
+import { IoMdPerson } from "react-icons/io"; 
+import { AiOutlineShareAlt } from "react-icons/ai";
 import { FaTools } from "react-icons/fa";
 import { PiBookOpenTextLight } from "react-icons/pi";
 import { FaPhone } from "react-icons/fa6";
-import { FaEdit } from "react-icons/fa"; //edit icon
-import { MdDeleteForever } from "react-icons/md"; //delete icon
-import { BsFillFuelPumpFill } from "react-icons/bs"; // fuel
-import { SlSpeedometer } from "react-icons/sl"; // kilometres
+import { FaEdit } from "react-icons/fa"; 
+import { MdDeleteForever } from "react-icons/md";
+import { BsFillFuelPumpFill } from "react-icons/bs";
+import { SlSpeedometer } from "react-icons/sl"; 
 
 const CurrentListing = () => {
     const { id } = useParams();

@@ -33,10 +33,6 @@ function Listings() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log('its getting started')
-    },[])
-
-    useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
@@ -166,7 +162,7 @@ function Listings() {
             )}
             <div
                 id="container"
-                className={`${showFilters || loading ? "hidden" : ""}`}
+                className={`${showFilters || loading ? "hidden" : ""} ${!loading && !initialLoad && displayedCars.length === 0 ? "no-listings" : ""}`}
             >
                 {!loading && !initialLoad && displayedCars.length === 0 && (
                     <div className="no-listings-message">

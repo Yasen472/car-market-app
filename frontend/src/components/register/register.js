@@ -47,7 +47,7 @@ const Register = () => {
       const response = await axios.post(`${process.env.REACT_APP_AUTH_URL}/register`, userData);
 
       if (response.status === 200) {
-        const userId = response.data.userId; // Assuming the server sends back a userId
+        const userId = response.data.userId; 
         console.log('Registration successful:', response.data);
         login(userId);
 

@@ -272,49 +272,43 @@ hr {
 
 
 @media (max-width: 400px) {
-    /* Ensure responsive and flexible grid layout */
     .specs-container {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Equal columns for label and value */
-        gap: 10px; /* Add some space between label and value */
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px; 
     }
 
-    /* Ensure long text wraps */
     .specs-header-column, 
     .specs-values-container {
         word-wrap: break-word;
         word-break: break-word;
         overflow-wrap: break-word;
-        white-space: normal; /* Allow wrapping of text */
+        white-space: normal; 
     }
 
-    /* Ensure proper alignment of text */
     .specs-header-column {
-        text-align: right; /* Align label text to the right */
-        padding-right: 10px; /* Add some padding for better spacing */
+        text-align: right; 
+        padding-right: 10px;
     }
 
     .specs-values-container {
-        text-align: left; /* Align value text to the left */
+        text-align: left; 
     }
 
     .specs-header-column {
         font-size: 0.9rem;
     }
 
-    /* Dynamically adjust font size to make content fit */
     .specs-values-container, .categories-container {
-        font-size: 0.85rem; /* Slightly smaller font */
+        font-size: 0.85rem; 
     }
 
-    /* Adjust container padding for smaller screens */
     .specs-container {
-        padding: 8px; /* Reduce padding to accommodate more content */
+        padding: 8px; 
     }
 
-    /* Ensure that content does not overflow */
     .specs-header-column, .specs-values-container {
-        min-width: 110px; /* Allow columns to shrink if necessary */
+        min-width: 110px; 
     }
 
     .description-header {
@@ -322,26 +316,19 @@ hr {
     }
 }
 
-/* For even smaller screens, stack label and value vertically */
 @media (max-width: 320px) {
     .specs-container {
-        grid-template-columns: 1fr; /* Stack label and value vertically */
+        grid-template-columns: 1fr; 
     }
 
-    /* Align labels and values for stacked layout */
     .specs-header-column, .specs-values-container {
         text-align: left;
-        padding: 5px 0; /* Add padding between stacked items */
+        padding: 5px 0;
     }
 }
 
 
-
-
-
 @media (max-width: 480px) {
-
-
 
     .categories-container,
     .specs-container {
