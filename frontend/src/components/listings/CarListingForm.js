@@ -17,7 +17,7 @@ const CarListingForm = () => {
   const euroStatus = ['1', '2', '3', '4', '5', '6'];
 
   const { userId } = useAuth();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const [models, setModels] = useState([]);
   const [makes, setMakes] = useState([]);
@@ -153,12 +153,13 @@ const CarListingForm = () => {
 
     const errors = {};
     Object.keys(car).forEach(key => {
-      if (!car[key] && key !== 'images') {
+      if (key !== 'images' && (car[key] === undefined || car[key] === null || car[key] === '')) {
         errors[key] = `${key.charAt(0).toUpperCase() + key.slice(1)} is required`;
       }
     });
 
-    if (!car.contact) {
+    // Update contact field validation
+    if (car.contact === undefined || car.contact === null) {
       errors.contact = 'Contact information is required';
     }
 
@@ -382,7 +383,7 @@ const CarListingForm = () => {
           <div>
             <label>From:</label>
             <select className="car-select" name="from" value={car.from} onChange={handleInputChange}>
-            <option value="">Select where the car is from</option>
+              <option value="">Select where the car is from</option>
               {from.map((option) => (
                 <option key={option} value={option}>{option}</option>
               ))}

@@ -16,7 +16,7 @@ const carSchema = new mongoose.Schema({
     engineCapacity: String, 
     euroStatus: String,
     doorsCount: String, 
-    contact: Number,
+    contact: String,
     description: String,
     ownerId: String,
     images: [String],

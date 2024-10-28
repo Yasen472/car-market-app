@@ -221,14 +221,6 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-.name-header {
-    font-weight: 300;
-    color: black;
-    font-size: 1.8rem;
-    border-bottom: 2px solid #0077ff;
-    padding: 4px 0px;
-}
-
 .car-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -319,9 +311,6 @@
         gap: 6px;
     }
     
-    .name-header {
-        font-size: 1.6rem;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -343,9 +332,6 @@
         height: 18px;
     }
     
-    .name-header {
-        font-size: 1.4rem;
-    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -389,10 +375,6 @@
     .icon-container > svg {
         width: 16px;
         height: 16px;
-    }
-    
-    .name-header {
-        font-size: 1.2rem;
     }
     
     .enter-icon-container {

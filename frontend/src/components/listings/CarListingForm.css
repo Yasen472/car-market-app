@@ -92,11 +92,6 @@
   right: 10px;
 }
 
-.image-preview img {
-  width: 100%;
-  height: auto;
-}
-
 @media only screen and (max-width: 600px) {
   .image-preview .carousel .control-arrow {
     width: 25px;

@@ -1,5 +1,5 @@
 .card {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -46,6 +46,19 @@
     cursor: pointer;
 }
 
+.name-header {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name-header {
+    font-weight: bold;
+    color: black;
+    border-bottom: 2px solid #0077ff;
+    padding: 4px 0px;
+}
+
 .car-image:hover {
     filter: brightness(0.7);
     transition: filter 0.3s ease-in-out;
@@ -90,15 +103,15 @@
     .card {
         display: flex;
         flex-direction: column;
-        max-height: 350px; 
+        max-height: 350px;
     }
-    
+
     .car-image {
-        height: 200px; 
+        height: 200px;
     }
 
     .card_details {
-        flex-grow: 1; 
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -107,11 +120,11 @@
 
 
 @media only screen and (max-width: 1200px) {
-    
+
     .car-details {
         font-size: 1.3rem;
     }
-    
+
     .icon-container {
         font-size: 0.9rem;
     }
@@ -123,14 +136,14 @@
         grid-template-columns: repeat(2, 1fr);
         font-size: 1.2rem;
     }
-    
+
     .icon-container {
         gap: 6px;
     }
-    
-    .name-header {
+
+    /* .name-header {
         font-size: 1.6rem;
-    }
+    } */
 
 }
 
@@ -139,52 +152,52 @@
     .car-details {
         font-size: 1.1rem;
     }
-    
+
     .icon-container {
         font-size: 0.85rem;
     }
-    
-    .icon-container > img,
-    .icon-container > svg {
+
+    .icon-container>img,
+    .icon-container>svg {
         width: 18px;
         height: 18px;
     }
-    
-    .name-header {
+
+    /* .name-header {
         font-size: 1.4rem;
-    }
+    } */
 }
 
 @media only screen and (max-width: 576px) {
-    
+
     .car-image {
         height: 200px;
     }
-    
+
     .cards {
         justify-self: center;
     }
-    
+
     .car-details {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         font-size: 1rem;
     }
-    
+
     .icon-container {
         font-size: 0.8rem;
     }
-    
-    .icon-container > img,
-    .icon-container > svg {
+
+    .icon-container>img,
+    .icon-container>svg {
         width: 16px;
         height: 16px;
     }
-    
-    .name-header {
+
+    /* .name-header {
         font-size: 1.2rem;
-    }
-    
+    } */
+
     .enter-icon-container {
         font-size: 1.5rem;
     }
