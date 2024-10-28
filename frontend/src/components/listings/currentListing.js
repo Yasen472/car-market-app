@@ -174,6 +174,7 @@ const CurrentListing = () => {
                                 <span>{car.price} lv.</span>
                             )}
                         </div>
+                        
 
                         <div className="icon-item">
                             <SlSpeedometer />

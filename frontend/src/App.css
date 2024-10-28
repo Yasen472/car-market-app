@@ -38,9 +38,9 @@ body {
 }
 
 
-.main-content {
+/* .main-content {
     overflow-y: auto; 
-}
+} */
 
 .current-listing .main-container {
     display: flex;

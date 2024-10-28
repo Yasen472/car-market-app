@@ -6,11 +6,11 @@ import { useAuth } from '../auth/authContext.js';
 import { useNavigate } from 'react-router-dom'
 
 const CarListingForm = () => {
-  const colors = ['White', 'Black', 'Silver', 'Gray', 'Blue', 'Red', 'Dark Blue', 'Dark Grey', 'Dark Red', 'Green'];
+  const colors = ['Black', 'Blue', 'Dark Blue', 'Dark Grey', 'Dark Red', 'Gray', 'Green', 'Red', 'Silver', 'White'];
   const coupe = ['sedan', 'hatchback', 'combie', 'coupe', 'limousine', 'SUV'];
   const transmission = ['manual', 'automatic'];
   const fuel = ['petrol', 'diesel', 'electric', 'hybrid'];
-  const locations = ['Sofia', 'Varna', 'Plovdiv', 'Vraca', 'Burgas', 'Dupnica', 'Stara Zagora', 'Montana', 'Ruse', 'Haskovo', 'Pleven', 'Shumen', 'Sliven', 'Dobrich', 'Veliko Tarnovo', 'Pazardjik', 'Pernik', 'Gabrovo', 'Blagoevgrad', 'Kazanlak', 'Razgrad', 'Kustendil', 'Silistra', 'Troqn', 'Kurdjali', 'Targovishte', 'Dimitrovgrad', 'Vidin', 'Yambol', 'Petrich', 'Karnobat', 'Provadia', 'Velingrad', 'Gorna Orqhovica', 'Lovech'];
+  const locations = ['Blagoevgrad', 'Burgas', 'Dimitrovgrad', 'Dobrich', 'Dupnica', 'Gabrovo', 'Gorna Orqhovica', 'Haskovo', 'Karnobat', 'Kazanlak', 'Kurdjali', 'Kustendil', 'Lovech', 'Montana', 'Pazardjik', 'Pernik', 'Petrich', 'Pleven', 'Plovdiv', 'Provadia', 'Razgrad', 'Ruse', 'Shumen', 'Silistra', 'Sliven', 'Sofia', 'Stara Zagora', 'Targovishte', 'Troqn', 'Varna', 'Velingrad', 'Veliko Tarnovo', 'Vidin', 'Vraca', 'Yambol'];
   const doorsCount = ['2/3', '4/5'];
   const condition = ['new', 'used'];
   const from = ['dealer', 'private seller', 'official distributor'];
@@ -232,7 +232,8 @@ const CarListingForm = () => {
           });
           const modelsData = response.data
             .filter((el) => el.make === car.make)
-            .map((el) => el.model);
+            .map((el) => el.model)
+            .sort((a, b) => a.localeCompare(b))
           setModels(modelsData);
         } else {
           setModels([]);
@@ -244,20 +245,6 @@ const CarListingForm = () => {
 
     fetchModels();
   }, [car.make]);
-
-  useEffect(() => {
-    const fetchTotalListings = async () => {
-      try {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/get/total-listings`);
-        setTotalListings(response.data.total);
-      } catch (error) {
-        console.error("Error fetching total listings:", error);
-      }
-    };
-
-    fetchTotalListings();
-  }, []);
-
 
   return (
     <div className="car-listing-container">

@@ -30,11 +30,12 @@
 }
 
 .car-listing-form form div {
-  margin-bottom: 15px;
+  margin-bottom: 20px; /* Increased spacing between fields */
 }
 
 .car-listing-form form label {
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Slightly increased margin */
+  font-weight: bold; /* Make labels stand out */
 }
 
 .car-listing-form form input,
@@ -44,6 +45,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 .car-listing-form form textarea {
@@ -139,4 +141,3 @@
     font-size: 22px;
   }
 }
-
